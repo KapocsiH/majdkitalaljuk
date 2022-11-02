@@ -4,7 +4,7 @@
 
 **A program funkciói:**
 - Emberek keresése (szűréssel)
-- Ember hozzáadás (regisztrálás)
+- Ember hozzáadás (kamu felhasználók)
 - Ember saját adatainak módosítása
 - Ember eltávolítása a listából
 - *Matchmaker* (random randi)
