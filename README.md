@@ -4,8 +4,8 @@
 
 **A program funkciói:**
 - Emberek keresése (szűréssel)
-- Ember hozzáadás (kamu felhasználók)
-- Ember saját adatainak módosítása
-- Ember eltávolítása a listából
+- Emberek hozzáadása (kamu felhasználók)
+- Emberek adatainak módosítása
+- Emberek eltávolítása a listából
 - *Matchmaker* (random randi)
 *in aura est amor*
