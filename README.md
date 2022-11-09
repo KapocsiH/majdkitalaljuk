@@ -1,16 +1,16 @@
 # Rednit társkereső
-====================
+==============================
 ## Készítette: Fazekas Botond, Kapocsi Hunor László, Pap László
 ### Az oldal egy kamu társkereső, amivel hamis reményt adunk a romantikus alkatoknak. 
 
 #### Admin mód funkciói:
-- Emberek keresése név alapján
+- Profilok keresése név alapján
 - Új profilok létrehozása
 - Meglévő profilok adatainak módosítása
 - Profilok törlése
 
 #### Felhasználó mód funkciói:
-- Emberek keresése név alapján
+- Prodilok keresése név alapján
 - Regisztrálás
 - Matchmaker, azaz szűrőkkel kereshet egy profilt (életkor, nem, utódok száma, szexualitás)
 
