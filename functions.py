@@ -3,19 +3,17 @@ from data import Rednit
 people = []
 
 def readFile():
-    f = open('Munkafüzet1.csv', 'r', encoding='UTF-8')
+    f = open('Munkafuzet.csv', 'r', encoding='UTF-8')
     f.readline()
     for row in f:
         r = Rednit(row.strip())
         people.append(r)
     f.close()
 
-    return people
-
 def writeFile():
-    f = open('Munkafüzet.csv', 'w', encoding='UTF-8')
+    f = open('Munkafuzet.csv', 'w', encoding='UTF-8')
     for r in people:
-        row = f'{r.name};{r.module};{r.time};{r.percent}\n'
+        row = f'{r.name};{r.age};{r.gender};{r.residence};{r.children};{r.sexuality}\n'
         f.write(row)
     f.close()
     
@@ -81,11 +79,15 @@ def detailsPerson():
 
 def deletePerson():
     name = input('Név: ')
-    for i in people:
-        if r.name.lower() in name.lower():
-            people.remove(i)
+    for r in people:
+        if r.name.lower() == name.lower():
+            people.remove(r)
             writeFile()
             return
-    r = Rednit(row)
-    people.pop(r)
     input('Ilyen nevű profil nincsen')
+
+def registration():
+    pass
+
+def matchmaker():
+    pass

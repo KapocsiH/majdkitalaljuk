@@ -1,16 +1,42 @@
 import os
 
 def menu():
-    print('1...Kamu profil létrehozása')
-    print('2...Kamu profil módosítása')
-    print('3...Keresés a kamu profilok között(szűréssel)')
-    print('4...Nem kívánatos kamu profil eltávolítása')
-    print('5...Matchmaker --> Leíráshoz nyomja meg a 6-os gombot!')
-    print('0...Kilépés az admin felületről')
+    print('1...Admin felület')
+    print('2...Normál felhasználói felület')
+    print('3...Kilépés a programból')
+ 
 
-    choice=input('\nVálasztás (0..6)')
-    while len(choice)!=1 or choice<'0' or choice>'6':
-        choice=input('\nVálasztás (0..6)')
+    choice=input('\nVálasztás (1..3)')
+    while len(choice)!=1 or choice<'1' or choice>'3':
+        choice=input('\nVálasztás (0..3)')
+
+    os.system('cls')
+    return int(choice)
+
+def menu2():
+    print('1...Emberek keresése')
+    print('2...Új profil létrehozása')
+    print('3...Adatok módosítása')
+    print('4...Profilok törlése')
+ 
+
+    choice=input('\nVálasztás (0..4)')
+    while len(choice)!=1 or choice<'1' or choice>'4':
+        choice=input('\nVálasztás (0..4)')
+
+    os.system('cls')
+    return int(choice)
+
+def menu3():
+    print('1...Emberek keresése')
+    print('2...Regisztráció')
+    print('3...Matchmaker')
+    print('4...Vissza')
+    choice=input('\nVálasztás (1..4)')
+    while len(choice)!=1 or choice<'1' or choice>'4':
+        choice=input('\nVálasztás (1..4)')
+        if choice==4:
+            menu()
 
     os.system('cls')
     return int(choice)
