@@ -1,5 +1,5 @@
 from menu import menu
-from functions import readFile
+from functions import *
 
 readFile()
 
