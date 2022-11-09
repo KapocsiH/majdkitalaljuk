@@ -20,25 +20,15 @@ def writeFile():
 
 def whichPerson():
         name = input('Keresés: ')
-        indexes = []
-        for i in range(0, len(people)):
-            if name.lower() in people[i].lower():
-                indexes.append(i)
+        index = 0
+        for i in people:
+            if name.lower() != people[i].lower():
+                index += 1
 
-        number = 1
-        for index in indexes:
-            print(f'{number}..{people[index]}')
-            menu += 1
-        print('0..Vissza')
+        print(f'Kiválasztásra került: {people[index]}')
+        
+        return people[index]
 
-        choice = input('\nVálasztás: ')
-        while not choice.isnumeric() or int(choice) < 0 or int(choice) > len(indexes):
-            choice = input('\nHibás parancs, válasszon újra: ')
-
-        if choice == 0:
-            return -1
-        else:
-            return indexes[int(choice) - 1]
 
 def newPerson():
     name = input('Név: ')
@@ -68,7 +58,7 @@ def modifyPerson():
     input('Ilyen nevű felhasználó nincs.')
 
 def detailsPerson():
-    name = input('Név(részlet):  ')
+    name = input('Név:  ')
     for r in people:
         if name.lower() in r.name.lower():
             print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}. ')
