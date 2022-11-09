@@ -12,7 +12,7 @@
 #### Felhasználó mód funkciói:
 - Prodilok keresése név alapján
 - Regisztrálás
-- Matchmaker, azaz szűrőkkel kereshet egy profilt (életkor, nem, utódok száma, szexualitás)
+- Matchmaker, azaz a szűrőknek megfelelő profilok keresése (életkor, nem, utódok száma, szexualitás)
 
 Az egyes funkciók egy bizonyos *priotitási* szintet kaptak, ami a funkció elkészítésének nehézségét illetve időigényességét jelzi.
 Ennek segítségével tudjuk jelölni, hogy kinek mennyi dolga van, és ez alapján osztjuk a feladatokat.
