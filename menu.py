@@ -12,4 +12,5 @@ def menu():
     while len(choice)!=1 or choice<'0' or choice>'6':
         choice=input('\nVálasztás (0..6)')
 
-    
+    os.system('cls')
+    return int(choice)
