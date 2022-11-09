@@ -4,15 +4,15 @@
 ### Az oldal egy kamu társkereső, amivel hamis reményt adunk a romantikus alkatoknak. 
 
 #### Admin mód funkciói:
--Emberek keresése név alapján
--Új profilok létrehozása
--Meglévő profilok adatainak módosítása
--Profilok törlése
+- Emberek keresése név alapján
+- Új profilok létrehozása
+- Meglévő profilok adatainak módosítása
+- Profilok törlése
 
 #### Felhasználó mód funkciói:
--Emberek keresése név alapján
--Regisztrálás
--Matchmaker, azaz szűrőkkel kereshet egy profilt (életkor, nem, utódok száma, szexualitás)
+- Emberek keresése név alapján
+- Regisztrálás
+- Matchmaker, azaz szűrőkkel kereshet egy profilt (életkor, nem, utódok száma, szexualitás)
 
 Az egyes funkciók egy bizonyos *priotitási* szintet kaptak, ami a funkció elkészítésének nehézségét illetve időigényességét jelzi.
 Ennek segítségével tudjuk jelölni, hogy kinek mennyi dolga van, és ez alapján osztjuk a feladatokat.
