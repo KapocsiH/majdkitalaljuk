@@ -1,0 +1,31 @@
+from dataLaci import Rednit
+from functionsLaci import writeFile
+
+people = []
+
+def newPerson():
+    name = input('Név: ')
+    age = int(input('Kor: '))
+    gender = input('Nem: ')
+    residence = input('Lakhely: ')
+    children = int(input('Utódok száma: '))
+    sexuality = input('Vonzalom: ')
+    row = f'{name};{age};{gender};{residence};{children};{sexuality}\n'
+    f = open('Munkafüzet1.csv', 'a', encoding = 'UTF-8')
+    f.write(row)
+    f.close
+    r = Rednit(row)
+    people.append(r)
+
+def modifyPerson():
+    name = input('Név: ')
+    for p in people:
+        if p.name.lower() == name.lower():
+            p.age = int(input('Kor: '))
+            p.gender = input('Nem: ')
+            p.residence = input('Százalék: ')
+            p.children = int(input('Utódok száma: '))
+            p.sexuality = input('Vonzalom: ')
+            writeFile()
+            return
+    input('Ilyen nevű felhasználó nincs.')
