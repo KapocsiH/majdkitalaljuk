@@ -1,4 +1,5 @@
-
+from functionsLaci import *
+f = open('')
 
 class Rednit:
     
