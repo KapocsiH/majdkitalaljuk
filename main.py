@@ -1,8 +1,6 @@
 from menu import menu
 from functions import *
 
-readFile()
-
 choice=menu()
 
 while choice!=0:

@@ -1,8 +1,6 @@
-from data import *
+from data import Rednit
 
 people = []
-
-r = Rednit()
 
 def readFile():
     f = open('Munkafüzet1.csv', 'r', encoding='UTF-8')
@@ -75,9 +73,11 @@ def detailsPerson():
     name = input('Név(részlet):  ')
     for r in people:
         if name.lower() in r.name.lower():
-            print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality} ')
+            print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}. ')
     
     input('')
+
+
 
 def deletePerson():
     name = input('Név: ')
@@ -86,4 +86,6 @@ def deletePerson():
             people.remove(i)
             writeFile()
             return
+    r = Rednit(row)
+    people.pop(r)
     input('Ilyen nevű profil nincsen')

@@ -1,6 +1,3 @@
-from functionsLaci import *
-f = open('')
-
 class Rednit:
     
     def __init__(self, row: str):
