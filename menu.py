@@ -20,8 +20,8 @@ def menu2():
     print('4...Profilok törlése')
  
 
-    choice=input('\nVálasztás (0..4)')
-    while len(choice)!=1 or choice<'1' or choice>'4':
+    choice=int(input('\nVálasztás (0..4)'))
+    while choice < 1 or choice > 4:
         choice=input('\nVálasztás (0..4)')
 
     os.system('cls')
