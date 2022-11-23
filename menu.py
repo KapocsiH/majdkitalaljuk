@@ -7,9 +7,9 @@ def menu():
     print('3...Kilépés a programból')
  
 
-    choice=input('\nVálasztás (1..3)')
+    choice=input('\nVálasztás (1..3): ')
     while len(choice)!=1 or choice<'1' or choice>'3':
-        choice=input('\nVálasztás (0..3)')
+        choice=input('\nVálasztás (0..3): ')
 
     os.system('cls')
     return int(choice)
@@ -21,7 +21,7 @@ def menu2():
     print('4...Profilok törlése')
     print('5...Vissza')
     
-    choice=input('\nVálasztás (1..4)')
+    choice=input('\nVálasztás (1..4): ')
 
     if choice=='1':
         whichPerson()
@@ -46,8 +46,25 @@ def menu3():
     if choice=='1':
         detailsPerson()
     elif choice=='2':
-        registration()
+        pass
     elif choice=='3':
         matchmaker()
     elif choice=='4':
         return
+    
+def registration():
+    password = 'Adminuser'
+    login = input('Kérem a jelszót:  ')
+    if login == password:
+        menu2()
+    elif login != password:
+        login = input('Kérem a jelszót:  ')
+        if login == password:
+            menu2()
+        elif login != password:
+            login = input('Kérem a jelszót:  ')
+            if login == password:
+                menu2()
+            else:
+                print('\nSikertelen bejelnetkezés, innentől a normál felületben folytathatja az alkalmazás használatát!\n')
+                menu3()
