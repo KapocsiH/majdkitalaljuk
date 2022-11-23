@@ -60,7 +60,24 @@ def menu3():
             return
         elif choice=='5':
             sys.exit()
-        
+
+def menuRestricted():
+    print('1...Emberek keresése')
+    print('2...Regisztráció')
+    print('3...Matchmaker')
+    print('4...Kilépés a programból')
+
+    choice=input('\nVálasztás (1..4): ')
+
+    while choice!=6:
+        if choice=='1':
+            detailsPerson()
+        elif choice=='2':
+            pass
+        elif choice=='3':
+            matchmaker()
+        elif choice=='4':
+            sys.exit()
     
 def registration():
     password = 'Adminuser'
@@ -77,4 +94,4 @@ def registration():
                 menu2()
             else:
                 print('\nSikertelen bejelentkezés, innentől a normál felületben folytathatja az alkalmazás használatát!\n')
-                menu3()
+                menuRestricted()
