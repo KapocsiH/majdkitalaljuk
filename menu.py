@@ -34,7 +34,7 @@ def menu2():
         elif choice=='4':
             deletePerson()
         elif choice=='5':
-            menu()
+            return 
 
 
 def menu3():
@@ -54,4 +54,4 @@ def menu3():
         elif choice=='3':
             matchmaker()
         elif choice=='4':
-            menu()
+            return
