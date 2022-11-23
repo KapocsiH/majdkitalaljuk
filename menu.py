@@ -1,4 +1,5 @@
 import os
+from functions import *
 
 def menu():
     print('1...Admin felület')
@@ -18,18 +19,19 @@ def menu2():
     print('2...Új profil létrehozása')
     print('3...Adatok módosítása')
     print('4...Profilok törlése')
- 
+    
+    choice=input('\nVálasztás (1..4)')
 
-        if choice=='1':
-            whichPerson()
-        elif choice=='2':
-            newPerson()
-        elif choice=='3':
-            modifyPerson()
-        elif choice=='4':
-            deletePerson()
-        elif choice=='5':
-            return 
+    if choice=='1':
+        whichPerson()
+    elif choice=='2':
+        newPerson()
+    elif choice=='3':
+        modifyPerson()
+    elif choice=='4':
+        deletePerson()
+    elif choice=='5':
+        return 
 
     os.system('cls')
     return int(choice)
@@ -42,13 +44,13 @@ def menu3():
         print('3...Matchmaker')
         print('4...Vissza')
 
-        choice=input('\nVálasztás (1..4): ')
+    choice=input('\nVálasztás (1..4): ')
 
-        if choice=='1':
-            detailsPerson()
-        elif choice=='2':
-            registration()
-        elif choice=='3':
-            matchmaker()
-        elif choice=='4':
-            return
+    if choice=='1':
+        detailsPerson()
+    elif choice=='2':
+        registration()
+    elif choice=='3':
+        matchmaker()
+    elif choice=='4':
+        return
