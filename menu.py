@@ -27,7 +27,7 @@ def menu2():
 
     while choice!=7:
         if choice=='1':
-            whichPerson()
+            detailsPerson()
         elif choice=='2':
             newPerson()
         elif choice=='3':
@@ -76,5 +76,5 @@ def registration():
             if login == password:
                 menu2()
             else:
-                print('\nSikertelen bejelnetkezés, innentől a normál felületben folytathatja az alkalmazás használatát!\n')
+                print('\nSikertelen bejelentkezés, innentől a normál felületben folytathatja az alkalmazás használatát!\n')
                 menu3()
