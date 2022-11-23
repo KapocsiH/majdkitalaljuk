@@ -3,7 +3,7 @@ people = []
 # choosenperson = []
 
 def readFile():
-    f = open('Munkafuzet.csv', 'r', encoding='UTF-8')
+    f = open('data.csv', 'r', encoding='UTF-8')
     f.readline()
     for row in f:
         r = Rednit(row.strip())
@@ -11,7 +11,7 @@ def readFile():
     f.close()
 
 def writeFile():
-    f = open('Munkafuzet.csv', 'w', encoding='UTF-8')
+    f = open('data.csv', 'w', encoding='UTF-8')
     for r in people:
         row = f'{r.name};{r.age};{r.gender};{r.residence};{r.children};{r.sexuality}\n'
         f.write(row)
@@ -35,7 +35,7 @@ def newPerson():
     children = int(input('Utódok száma: '))
     sexuality = input('Vonzalom: ')
     row = f'{name};{age};{gender};{residence};{children};{sexuality}\n'
-    f = open('Munkafuzet.csv', 'a', encoding = 'UTF-8')
+    f = open('data.csv', 'a', encoding = 'UTF-8')
     f.write(row)
     f.close
     r = Rednit(row)
