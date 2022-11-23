@@ -42,10 +42,15 @@ def newPerson():
     people.append(r)
 
 def modifyPerson():
-    choice = int(input('Mit akarunk változtatni?\n1= név\n2= kor\n3= nem\n4= lakhely\n5= utódok\n6= vonzalom:  '))
+    name = input('A változtatni kívánt alany neve (teljes név): ')
     for r in people:
-        if whichPerson() == r.name.lower():
-            pass
+        if r.name.lower() == name.lower():
+            r.gender = input('Nem: ')
+            r.residence = input('Lakhely: ')
+            r.children = int(input('Utódok száma: '))
+            r.sexuality = input('Vonzalom: ')
+            writeFile()
+            return
 
 def detailsPerson():
     name = input('Név:  ')
