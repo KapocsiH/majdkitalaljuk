@@ -1,4 +1,5 @@
 import os
+import sys
 from functions import *
 
 def menu():
@@ -20,19 +21,23 @@ def menu2():
     print('3...Adatok módosítása')
     print('4...Profilok törlése')
     print('5...Vissza')
+    print('6...Kilépés a programból')
     
-    choice=input('\nVálasztás (1..4): ')
+    choice=input('\nVálasztás (1..6): ')
 
-    if choice=='1':
-        whichPerson()
-    elif choice=='2':
-        newPerson()
-    elif choice=='3':
-        modifyPerson()
-    elif choice=='4':
-        deletePerson()
-    elif choice=='5':
-        return 
+    while choice!=7:
+        if choice=='1':
+            whichPerson()
+        elif choice=='2':
+            newPerson()
+        elif choice=='3':
+            modifyPerson()
+        elif choice=='4':
+            deletePerson()
+        elif choice=='5':
+            return 
+        elif choice=='6':
+            sys.exit()
 
 
 def menu3():     
@@ -40,17 +45,22 @@ def menu3():
     print('2...Regisztráció')
     print('3...Matchmaker')
     print('4...Vissza')
+    print('5...Kilépés a programból')
 
-    choice=input('\nVálasztás (1..4): ')
+    choice=input('\nVálasztás (1..5): ')
 
-    if choice=='1':
-        detailsPerson()
-    elif choice=='2':
-        pass
-    elif choice=='3':
-        matchmaker()
-    elif choice=='4':
-        return
+    while choice!=6:
+        if choice=='1':
+            detailsPerson()
+        elif choice=='2':
+            pass
+        elif choice=='3':
+            matchmaker()
+        elif choice=='4':
+            return
+        elif choice=='5':
+            sys.exit()
+        
     
 def registration():
     password = 'Adminuser'
