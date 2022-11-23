@@ -83,23 +83,25 @@ def matchmaker():
         print('1. -25')
         print('2. 26-45')
         print('3. 45-')
-        agepreferance = input('Választás:  ')
+        agepreferance = int(input('Választás:  '))
         while agepreferance < 1 or agepreferance > 3:
-            agepreferance = input('Választás:  ')
+            agepreferance = int(input('Választás:  '))
         suitable = []
         if agepreferance == 1:
             for r in people:
                 if r.age <= 25:
-                    suitable.append(people[r])
+                    suitable.append(f'{r.name}')
         elif agepreferance == 2:
             for r in people:
                 if r.age >= 26 and r.age <= 45:
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif agepreferance == 2:
             for r in people:
                 if r.age >= 26 and r.age <= 45:
-                    suitable.append(people[r])
-        print(f'Megfelelő profilok: {suitable}')
+                    suitable.append(r.name)
+        print('Megfelelő profilok:') 
+        print(suitable)
+        print('')
     elif choice == 2:
         print('Nemek:')
         print('1. Férfi')
@@ -112,14 +114,16 @@ def matchmaker():
         if genderpreferance == 1:
             for r in people:
                 if r.gender == 'férfi':
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif genderpreferance == 2:
             for r in people:
                 if r.gender == 'nő':
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif genderpreferance == 3:
             print('Jelenleg nincs ilyen felhasználónk')
-        print(f'Megfelelő profilok: {suitable}')
+        print('Megfelelő profilok:') 
+        print(suitable)
+        print('')
     elif choice == 3:
         print('Utódok száma:')
         print('1. Nincs utód')
@@ -133,20 +137,22 @@ def matchmaker():
         if childpreferance == 1:
             for r in people:
                 if r.children == 0:
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif childpreferance == 2:
             for r in people:
                 if r.children == 1:
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif childpreferance == 3:
             for r in people:
                 if r.children == 2:
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif childpreferance == 4:
             for r in people:
                 if r.children > 2:
-                    suitable.append(people[r])
-        print(f'Megfelelő profilok: {suitable}')
+                    suitable.append(r.name)
+        print('Megfelelő profilok:') 
+        print(suitable)
+        print('')
     elif choice == 4:
         print('Szexualitás:')
         print('1. Heteroszexuális')
@@ -159,13 +165,15 @@ def matchmaker():
         if sexualitypreferance == 1:
             for r in people:
                 if r.sexuality == 'Heteroszexuális':
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif sexualitypreferance == 2:
             for r in people:
                 if r.sexuality == 'Homoszexuális':
-                    suitable.append(people[r])
+                    suitable.append(r.name)
         elif sexualitypreferance == 3:
             for r in people:
                 if r.sexuality == 'Egyéb':
-                    suitable.append(people[r])
-        print(f'Megfelelő profilok: {suitable}')
+                    suitable.append(r.name)
+        print('Megfelelő profilok:') 
+        print(suitable)
+        print('')
