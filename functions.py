@@ -66,21 +66,6 @@ def deletePerson():
             return
     input('Ilyen nevű profil nincsen')
 
-def registration():
-    password = 'Adminuser'
-    login = input('Kérem a jelszót:  ')
-    if login == password:
-        return True
-    elif login != password:
-        login = input('Kérem a jelszót:  ')
-        if login == password:
-            return True
-        elif login != password:
-            login = input('Kérem a jelszót:  ')
-            if login == password:
-                return True
-            else:
-                return False
 
 def matchmaker():
     print('Mi alapján szeretne keresni?')
