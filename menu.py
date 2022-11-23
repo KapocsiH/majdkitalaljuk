@@ -19,6 +19,7 @@ def menu2():
     print('2...Új profil létrehozása')
     print('3...Adatok módosítása')
     print('4...Profilok törlése')
+    print('5...Vissza')
     
     choice=input('\nVálasztás (1..4)')
 
@@ -33,16 +34,12 @@ def menu2():
     elif choice=='5':
         return 
 
-    os.system('cls')
-    return int(choice)
 
-def menu3():
-    choice=''
-    while choice!='0':        
-        print('1...Emberek keresése')
-        print('2...Regisztráció')
-        print('3...Matchmaker')
-        print('4...Vissza')
+def menu3():     
+    print('1...Emberek keresése')
+    print('2...Regisztráció')
+    print('3...Matchmaker')
+    print('4...Vissza')
 
     choice=input('\nVálasztás (1..4): ')
 
