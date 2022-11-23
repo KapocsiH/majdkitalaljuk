@@ -34,7 +34,12 @@ def newPerson():
     residence = input('Lakhely: ')
     children = int(input('Utódok száma: '))
     sexuality = input('Vonzalom: ')
-    writeFile()
+    row = f'{name};{age};{gender};{residence};{children};{sexuality}\n'
+    f = open('Munkafuzet.csv', 'a', encoding = 'UTF-8')
+    f.write(row)
+    f.close
+    r = Rednit(row)
+    people.append(r)
 
 def modifyPerson():
     choice = int(input('Mit akarunk változtatni?\n1= név\n2= kor\n3= nem\n4= lakhely\n5= utódok\n6= vonzalom:  '))
