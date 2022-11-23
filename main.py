@@ -10,5 +10,5 @@ while choice!=0:
         menu2()
     elif choice==2:
         menu3()
-choice=menu()
+    choice=menu()
 
