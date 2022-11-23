@@ -1,6 +1,6 @@
 from data import Rednit
-
 people = []
+# choosenperson = []
 
 def readFile():
     f = open('Munkafuzet.csv', 'r', encoding='UTF-8')
@@ -19,15 +19,12 @@ def writeFile():
     
 
 def whichPerson():
-        name = input('Keresés: ')
-        index = 0
-        for i in people:
-            if name.lower() != people[i].lower():
-                index += 1
+    name = input('Kit keresünk? ')
+    for r in people:
+        if name.lower() in r.name.lower():
+            choosenperson = r.name.lower()
 
-        print(f'Kiválasztásra került: {people[index]}')
-        
-        return people[index]
+    return choosenperson
 
 
 def newPerson():
@@ -37,32 +34,20 @@ def newPerson():
     residence = input('Lakhely: ')
     children = int(input('Utódok száma: '))
     sexuality = input('Vonzalom: ')
-    row = f'{name};{age};{gender};{residence};{children};{sexuality}\n'
-    f = open('Munkafüzet1.csv', 'a', encoding = 'UTF-8')
-    f.write(row)
-    f.close
-    r = Rednit(row)
-    people.append(r)
+    writeFile()
 
 def modifyPerson():
-    name = input('Név: ')
-    for p in people:
-        if p.name.lower() == name.lower():
-            p.age = int(input('Kor: '))
-            p.gender = input('Nem: ')
-            p.residence = input('Százalék: ')
-            p.children = int(input('Utódok száma: '))
-            p.sexuality = input('Vonzalom: ')
-            writeFile()
-            return
-    input('Ilyen nevű felhasználó nincs.')
+    choice = int(input('Mit akarunk változtatni?\n1= név\n2= kor\n3= nem\n4= lakhely\n5= utódok\n6= vonzalom:  '))
+    for r in people:
+        if whichPerson() == r.name.lower():
+            pass
 
 def detailsPerson():
     name = input('Név:  ')
     for r in people:
         if name.lower() in r.name.lower():
             print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}. ')
-    
+
     input('')
 
 
@@ -77,7 +62,35 @@ def deletePerson():
     input('Ilyen nevű profil nincsen')
 
 def registration():
-    pass
+    password = 'Adminuser'
+    login = input('Kérem a jelszót:  ')
+    if login == password:
+        return True
+    elif login != password:
+        login = input('Kérem a jelszót:  ')
+        if login == password:
+            return True
+        elif login != password:
+            login = input('Kérem a jelszót:  ')
+            if login == password:
+                return True
+            else:
+                return False
 
 def matchmaker():
-    pass
+    print('Mi alapján szeretne keresni?')
+    print('1. Kor, 2. Nem, 3. Utódok száma, 4. Szexualitás')
+    choice = int(input('Választás:  '))
+    if choice == 1:
+        print('Korkategória: ')
+        print('1. -25')
+        print('2. 26-45')
+        print('3. 45-')
+        agepreferance = input('Választás:  ')
+        prefer = []
+        if agepreferance == 1:
+            for r in people:
+                if r.age <= 25:
+                    prefer.append(people[r])
+        
+        

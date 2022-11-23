@@ -1,5 +1,4 @@
 import os
-from functions import *
 
 def menu():
     print('1...Admin felület')
@@ -7,23 +6,19 @@ def menu():
     print('3...Kilépés a programból')
  
 
-    choice=input('\nVálasztás (1..3): ')
+    choice=input('\nVálasztás (1..3)')
     while len(choice)!=1 or choice<'1' or choice>'3':
-        choice=input('\nVálasztás (0..3): ')
+        choice=input('\nVálasztás (0..3)')
 
     os.system('cls')
     return int(choice)
 
 def menu2():
-    choice = ''
-    while choice != '0':
-        print('1...Emberek keresése')
-        print('2...Új profil létrehozása')
-        print('3...Adatok módosítása')
-        print('4...Profilok törlése')
-        print('5...Vissza')
+    print('1...Emberek keresése')
+    print('2...Új profil létrehozása')
+    print('3...Adatok módosítása')
+    print('4...Profilok törlése')
  
-        choice=input('\nVálasztás (1..5): ')
 
         if choice=='1':
             whichPerson()
@@ -36,6 +31,8 @@ def menu2():
         elif choice=='5':
             return 
 
+    os.system('cls')
+    return int(choice)
 
 def menu3():
     choice=''

@@ -1,0 +1,10 @@
+name = input('Név: ')
+    for p in people:
+        if p.name.lower() == name.lower():
+            p.age = int(input('Kor: '))
+            p.gender = input('Nem: ')
+            p.residence = input('Százalék: ')
+            p.children = int(input('Utódok száma: '))
+            p.sexuality = input('Vonzalom: ')
+            writeFile()
+            return
