@@ -73,8 +73,9 @@ def deletePerson():
 
 
 def matchmaker():
-    print('Mi alapján szeretne keresni?')
-    print('1. Kor, 2. Nem, 3. Utódok száma, 4. Szexualitás')
+    print('\nKis segítség: A Matchmaker funkcióval a felhasználók elvárások alapján kereshetnek kamu profilokat. Az, hogy melyik kamu\nprofil alkalmas az illetőnek, a szűrők alapján dőlik el.\n\nSzűrők:\nkor\nnem\nutódok\nvonzalom\n')
+    print('Mi alapján szeretne keresni?\n')
+    print('1. Kor, 2. Nem, 3. Utódok száma, 4. Szexualitás\n')
     choice = int(input('Választás:  '))
     while choice < 1 or choice > 4:
         choice = int(input('Választás:  '))
