@@ -74,6 +74,7 @@ def menu3():
             os.system('cls')
             return
         elif choice=='4':
+            os.system('cls')
             return
         elif choice=='5':
             sys.exit()
