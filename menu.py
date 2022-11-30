@@ -6,11 +6,11 @@ from termcolor import colored
 
 def menu():
     init()
-    print(colored('1...Admin felület' ,'magenta', 'on_white'))
-    print(colored('2...Normál felhasználói felület','white', 'on_magenta'))
-    print(colored('3...Kilépés a programból','magenta', 'on_white'))
+    print(colored('1...Admin felület              ','white', 'on_magenta'))
+    print(colored('2...Normál felhasználói felület','white', 'on_yellow'))
+    print(colored('3...Kilépés a programból       ','white', 'on_cyan'))
  
-    choice=input(colored('\nVálasztás (1..3): ','white', 'on_magenta'))
+    choice=input(colored('\nVálasztás (1..3): ','cyan', 'on_grey'))
     while len(choice)!=1 or choice<'1' or choice>'3':
         choice=input('\nVálasztás (0..3): ')
 
