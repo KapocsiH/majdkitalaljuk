@@ -51,7 +51,9 @@ def detailsPerson():
     for r in people:
         if name.lower() in r.name.lower():
             print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}.')
+    print(f'Ha nem kapott nevet, akkor {name} nincs a listában.')
     input('\nEnterrel visszaléphet a menübe.')
+    
 
 def deletePerson():
     name = input('Teljes név: ')
