@@ -18,60 +18,61 @@ def menu():
     return int(choice)
 
 def menu2():
-    print('1...Emberek keresése')
-    print('2...Új profil létrehozása')
-    print('3...Adatok módosítása')
-    print('4...Profilok törlése')
-    print('5...Vissza')
-    print('6...Kilépés a programból')
+    init()
+    print(colored('1...Emberek keresése     ', 'white', 'on_red'))
+    print(colored('2...Új profil létrehozása', 'white','on_yellow'))
+    print(colored('3...Adatok módosítása    ', 'white', 'on_yellow'))
+    print(colored('4...Profilok törlése     ', 'white', 'on_green'))
+    print(colored('5...Vissza               ', 'white', 'on_blue'))
+    print(colored('6...Kilépés a programból ', 'white', 'on_magenta'))
     
-    choice=input('\nVálasztás (1..6): ')
+    choice=input(colored('\nVálasztás (1..6): ','cyan'))
 
     while choice!=7:
         if choice=='1':
             detailsPerson()
             os.system('cls')
-            menu2()
+            return
         elif choice=='2':
             newPerson()
             os.system('cls')
-            menu2()
+            return
         elif choice=='3':
             modifyPerson()
             os.system('cls')
-            menu2()
+            return
         elif choice=='4':
             deletePerson()
             os.system('cls')
-            menu2()
+            return
         elif choice=='5':
             os.system('cls')
-            menu() 
+            return
         elif choice=='6':
             sys.exit()
 
 def menu3():     
-    print('1...Emberek keresése')
-    print('2...Regisztráció')
-    print('3...Matchmaker')
-    print('4...Vissza')
-    print('5...Kilépés a programból')
+    print(colored('1...Emberek keresése    ','white', 'on_magenta'))
+    print(colored('2...Regisztráció        ','grey', 'on_white'))
+    print(colored('3...Matchmaker          ','white', 'on_magenta'))
+    print(colored('4...Vissza              ','white','on_grey'))
+    print(colored('5...Kilépés a programból','white','on_blue'))
 
-    choice=input('\nVálasztás (1..5): ')
+    choice=input(colored('\nVálasztás (1..5): ','cyan'))
 
     while choice!=6:
         if choice=='1':
             detailsPerson()
             os.system('cls')
-            menu3()
+            return
         elif choice=='2':
             newPerson()
             os.system('cls')
-            menu3()
+            return
         elif choice=='3':
             matchmaker()
             os.system('cls')
-            menu3()
+            return
         elif choice=='4':
             return
         elif choice=='5':
@@ -81,7 +82,7 @@ def menuRestricted():
     print('1...Emberek keresése')
     print('2...Kilépés a programból')
 
-    choice=input('\nVálasztás (1..2): ')
+    choice=input(colored('\nVálasztás (1..2): ','cyan'))
 
     while choice!=3:
         if choice=='1':
@@ -93,16 +94,16 @@ def menuRestricted():
     
 def registration():
     password = 'Adminuser'
-    login = input('Kérem a jelszót:  ')
+    login = input(colored('Kérem a jelszót:  ','cyan'))
     if login == password:
         os.system('cls')
         menu2()
     elif login != password:
-        login = input('Kérem a jelszót:  ')
+        login = input(colored('Kérem a jelszót:  ','cyan'))
         if login == password:
             menu2()
         elif login != password:
-            login = input('Kérem a jelszót:  ')
+            login = input(colored('Kérem a jelszót:  ','cyan'))
             if login == password:
                 menu2()
             else:
