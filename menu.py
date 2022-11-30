@@ -7,7 +7,6 @@ def menu():
     print('2...Normál felhasználói felület')
     print('3...Kilépés a programból')
  
-
     choice=input('\nVálasztás (1..3): ')
     while len(choice)!=1 or choice<'1' or choice>'3':
         choice=input('\nVálasztás (0..3): ')
@@ -28,17 +27,25 @@ def menu2():
     while choice!=7:
         if choice=='1':
             detailsPerson()
+            os.system('cls')
+            menu2()
         elif choice=='2':
             newPerson()
+            os.system('cls')
+            menu2()
         elif choice=='3':
             modifyPerson()
+            os.system('cls')
+            menu2()
         elif choice=='4':
             deletePerson()
+            os.system('cls')
+            menu2()
         elif choice=='5':
-            return 
+            os.system('cls')
+            menu() 
         elif choice=='6':
             sys.exit()
-
 
 def menu3():     
     print('1...Emberek keresése')
@@ -52,10 +59,16 @@ def menu3():
     while choice!=6:
         if choice=='1':
             detailsPerson()
+            os.system('cls')
+            menu3()
         elif choice=='2':
-            pass
+            newPerson()
+            os.system('cls')
+            menu3()
         elif choice=='3':
             matchmaker()
+            os.system('cls')
+            menu3()
         elif choice=='4':
             return
         elif choice=='5':
@@ -63,26 +76,23 @@ def menu3():
 
 def menuRestricted():
     print('1...Emberek keresése')
-    print('2...Regisztráció')
-    print('3...Matchmaker')
-    print('4...Kilépés a programból')
+    print('2...Kilépés a programból')
 
-    choice=input('\nVálasztás (1..4): ')
+    choice=input('\nVálasztás (1..2): ')
 
-    while choice!=6:
+    while choice!=3:
         if choice=='1':
             detailsPerson()
+            os.system('cls')
+            menuRestricted()
         elif choice=='2':
-            pass
-        elif choice=='3':
-            matchmaker()
-        elif choice=='4':
             sys.exit()
     
 def registration():
     password = 'Adminuser'
     login = input('Kérem a jelszót:  ')
     if login == password:
+        os.system('cls')
         menu2()
     elif login != password:
         login = input('Kérem a jelszót:  ')
@@ -93,5 +103,6 @@ def registration():
             if login == password:
                 menu2()
             else:
-                print('\nSikertelen bejelentkezés, innentől a normál felületben folytathatja az alkalmazás használatát!\n')
+                input('\nSikertelen bejelentkezés, innentől a korlátolt felületben folytathatja az alkalmazás használatát.\n\nEnterrel továbbléphet a menübe.')
+                os.system('cls')
                 menuRestricted()

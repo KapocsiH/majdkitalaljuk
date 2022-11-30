@@ -1,4 +1,6 @@
 from data import Rednit
+import menu
+import os
 people = []
 # choosenperson = []
 
@@ -16,19 +18,9 @@ def writeFile():
         row = f'{r.name};{r.age};{r.gender};{r.residence};{r.children};{r.sexuality}\n'
         f.write(row)
     f.close()
-    
-
-def whichPerson():
-    name = input('Kit keresünk? ')
-    for r in people:
-        if name.lower() in r.name.lower():
-            choosenperson = r.name.lower()
-
-    return choosenperson
-
 
 def newPerson():
-    name = input('Név: ')
+    name = input('Teljes név: ')
     age = int(input('Kor: '))
     gender = input('Nem: ')
     residence = input('Lakhely: ')
@@ -40,9 +32,10 @@ def newPerson():
     f.close
     r = Rednit(row)
     people.append(r)
+    input('\nSikeres regisztráció.\n\nEnterrel visszaléphet a menübe.')
 
 def modifyPerson():
-    name = input('A változtatni kívánt alany neve (teljes név): ')
+    name = input('A változtatni kívánt alany teljes neve: ')
     for r in people:
         if r.name.lower() == name.lower():
             r.gender = input('Nem: ')
@@ -50,27 +43,25 @@ def modifyPerson():
             r.children = int(input('Utódok száma: '))
             r.sexuality = input('Vonzalom: ')
             writeFile()
-            return
+            input('\nAz adatok módosultak.\n\nEnterrel visszaléphet a menübe.')
+    input('\nIlyen nevű profil nincsen.\n\nEnterrel visszaléphet a menübe.')
 
 def detailsPerson():
     name = input('Név:  ')
     for r in people:
         if name.lower() in r.name.lower():
-            print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}. ')
-
-    input('')
-
-
+            print(f'{r.name}, {r.age} éves {r.gender}. Lakhelye {r.residence}, {r.children} utódja van. Szexualitása {r.sexuality}.')
+    input('\nEnterrel visszaléphet a menübe.')
 
 def deletePerson():
-    name = input('Név: ')
+    name = input('Teljes név: ')
     for r in people:
         if r.name.lower() == name.lower():
             people.remove(r)
             writeFile()
-            return
-    input('Ilyen nevű profil nincsen')
-
+            os.system('cls')
+            menu.menu2()
+    input('\nIlyen nevű profil nincsen.\n\nEnterrel visszaléphet a menübe.')
 
 def matchmaker():
     print('\nKis segítség: A Matchmaker funkcióval a felhasználók elvárások alapján kereshetnek kamu profilokat. Az, hogy melyik kamu\nprofil alkalmas az illetőnek, a szűrők alapján dőlik el.\n\nSzűrők:\nkor\nnem\nutódok\nvonzalom\n')
@@ -121,10 +112,9 @@ def matchmaker():
                 if r.gender == 'nő':
                     suitable.append(r.name)
         elif genderpreferance == 3:
-            print('Jelenleg nincs ilyen felhasználónk')
-        print('Megfelelő profilok:') 
+            print('\nNincs ilyen nemű felhasználónk.')
+        print('\nMegfelelő profilok:') 
         print(suitable)
-        print('')
     elif choice == 3:
         print('Utódok száma:')
         print('1. Nincs utód')
@@ -178,3 +168,4 @@ def matchmaker():
         print('Megfelelő profilok:') 
         print(suitable)
         print('')
+    input('\nIn aura est amor.\n\nEnterrel visszaléphet a menübe.')
