@@ -20,8 +20,8 @@ def menu():
 def menu2():
     init()
     print(colored('1...Emberek keresése     ', 'white', 'on_red'))
-    print(colored('2...Új profil létrehozása', 'white','on_yellow'))
-    print(colored('3...Adatok módosítása    ', 'white', 'on_yellow'))
+    print(colored('2...Új profil létrehozása', 'grey','on_yellow'))
+    print(colored('3...Adatok módosítása    ', 'grey', 'on_yellow'))
     print(colored('4...Profilok törlése     ', 'white', 'on_green'))
     print(colored('5...Vissza               ', 'white', 'on_blue'))
     print(colored('6...Kilépés a programból ', 'white', 'on_magenta'))
@@ -80,17 +80,27 @@ def menu3():
             sys.exit()
 
 def menuRestricted():
-    print('1...Emberek keresése')
-    print('2...Kilépés a programból')
+    print(colored('1...Emberek keresése    ','grey', 'on_yellow'))
+    print(colored('2...Regisztráció        ','grey', 'on_white'))
+    print(colored('3...Matchmaker          ','white', 'on_magenta'))
+    print(colored('4...Kilépés a programból','white','on_grey'))
 
-    choice=input(colored('\nVálasztás (1..2): ','cyan'))
+    choice=input(colored('\nVálasztás (1..4): ','cyan'))
 
-    while choice!=3:
+    while choice!=5:
         if choice=='1':
             detailsPerson()
             os.system('cls')
-            menuRestricted()
+            return
         elif choice=='2':
+            newPerson()
+            os.system('cls')
+            return
+        elif choice=='3':
+            matchmaker()
+            os.system('cls')
+            return
+        elif choice=='4':
             sys.exit()
     
 def registration():
@@ -100,10 +110,12 @@ def registration():
         os.system('cls')
         menu2()
     elif login != password:
+        os.system('cls')
         login = input(colored('Kérem a jelszót:  ','cyan'))
         if login == password:
             menu2()
         elif login != password:
+            os.system('cls')
             login = input(colored('Kérem a jelszót:  ','cyan'))
             if login == password:
                 menu2()
